@@ -19,14 +19,46 @@ ensuring a smooth user experience across a diverse range of devices.
 The utility is intended to be interactive. It will prompt for the location of
 the legacy siad host database and convert it to the new format.
 
-```sh
-./migrate
-```
+You will need to generate a new 12-word wallet seed and send your funds from
+Sia-UI/siad to your new wallet address.
 
+1. Download the latest release of `hostd`
+   (https://sia.tech/host)
+2. Extract the files and open terminal or command prompt in the directory
+3. Run `hostd seed` to generate a new wallet seed. It will generate a new
+   12-word seed and print the wallet address. **Write down all 12 words and
+   double check it. You will need it to recover your funds.**
+4. Send your funds from your old siad wallet to your new wallet.
+
+## Migrating Sia-UI/Host Manager
+
+1. Find your data directory
+
+Operating System | Data Directory
+---------------- | --------------
+Windows          | `%APPDATA%\Sia-UI`
+macOS            | `~/Library/Application Support/Sia-UI`
+Linux            | `~/.config/Sia-UI`
+
+2. Stop Sia-UI or Host Manager
+3. Download the latest release of the migration utility (https://github.com/SiaFoundation/migrate-siad-host/releases)
+4. Run the migration tool, answering any prompts
+5. Wait for the migration to complete
+
+## Migrating `siad`
+
+1. Find your data directory
+2. Stop siad
+3. Download the latest release of the migration utility (https://github.com/SiaFoundation/migrate-siad-host/releases)
+4. Run the migration tool, answering any prompts
+
+## Running `hostd`
+
+Setup `hostd`, making sure to start it in your existing data directory (https://docs.sia.tech/hosting/setup-guides)
 
 # Building
 
-`hostd` uses SQLite for its persistence. A gcc toolchain is required to build
+`migrate` uses SQLite for its persistence. A gcc toolchain is required to build
 the migration utility
 
 ```sh
