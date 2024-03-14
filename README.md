@@ -22,6 +22,8 @@ the legacy siad host database and convert it to the new format.
 You will need to generate a new 12-word wallet seed and send your funds from
 Sia-UI/siad to your new wallet address.
 
+ > Note: If you are migrating using Windows, make sure to run the migration tool using a `Command Prompt` and not by double-clicking it.
+
 1. Download the latest release of `hostd`
    (https://sia.tech/host)
 2. Extract the files and open terminal or command prompt in the directory
